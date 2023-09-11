@@ -24,6 +24,7 @@ public class ConfirmServiceTest {
     @AfterEach
     public void dbreset(){
         couponRepository.deleteAll(); // 모든 로직이 끝나면 디비 초기화
+        confirmService.reset();// 레디스에서 incr로 증가된 값을 0으로 복구
     }
 
     @Test
